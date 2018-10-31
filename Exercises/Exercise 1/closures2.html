@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <script>
+
+
+
+
+
+
+
+
+
+
+function getTypeofHTML(tag){
+
+window.onload = function() {
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            var data = JSON.parse(xhr.responseText);
+            data.forEach(function (item) {
+                inner(item);
+            });
+        }
+    }
+    xhr.open('GET', 'http://jsonplaceholder.typicode.com/posts', true);
+    xhr.send();
+};
+
+
+
+
+
+
+    function inner(item) {
+    var p = document.createElement('p');
+    var str1="img";
+    var n=str1.localeCompare(tag);
+    if(n==0)
+    {
+       // p.innerHTML='<'+tag+'src=https://www.google.co.in/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwin8dTN66reAhVLeysKHVmhAQMQjRx6BAgBEAU&url=https%3A%2F%2Fwww.amazon.in%2FNooElec-Seeds-India-Red-Rose%2Fdp%2FB01KJKJ8YE&psig=AOvVaw3voGhcmEfrKaNH2TnOPcq7&ust=1540874671294899</'+tag+'>'
+    }
+  
+  //  p.innerHTML ='<'+tag+'>'+item.id+'</'+tag+'>'+ item.title + '<br>' + item.body
+    document.getElementById('myLocation')='<'+tag+'src=https://www.google.co.in/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwin8dTN66reAhVLeysKHVmhAQMQjRx6BAgBEAU&url=https%3A%2F%2Fwww.amazon.in%2FNooElec-Seeds-India-Red-Rose%2Fdp%2FB01KJKJ8YE&psig=AOvVaw3voGhcmEfrKaNH2TnOPcq7&ust=1540874671294899</'+tag+'>'
+}
+   return inner;
+  }
+
+
+
+  let h1 = getTypeofHTML('img')
+  
+  console.log(h1());
+  console.log("hello");
+  
+
+  </script>
+</head>
+<body>
+  <h1>blaah</h1>
+  <div id="myLocation"></div>
+</body>
+</html>
+
+
+

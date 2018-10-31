@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript">
+
+
+
+
+ var jsonArray=[]; 
+function getInfo()
+{
+   
+  // event.preventDefault(); 
+
+
+contactName=document.myForm.NName.value;
+contactPlace=document.myForm.PPlace.value;
+contactPhone=document.myForm.PPhone.value;
+
+ 
+
+var myObj={
+
+"name":contactName,
+"place":contactPlace,
+"phone":contactPhone
+
+
+};
+
+
+
+
+ jsonArray.push(myObj);
+ console.log(jsonArray);
+
+
+
+
+    
+}
+
+console.log("helllllllloooooooo");
+
+
+
+</script>
+
+
+
+
+
+</head>
+<body>
+
+    <form name="myForm" onsubmit="getInfo()">
+        Name <input type="text" name ="NName">
+        Place <input type="text" name="PPlace" >
+        Phone<input type="number" name="PPhone" >
+        <br/><br/><br/>
+        <input type="submit" value="Add Contacts">
+    </form>
+
+    </body>
+</html>

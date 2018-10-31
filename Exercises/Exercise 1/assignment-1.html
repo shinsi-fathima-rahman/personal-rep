@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+   
+<script type="text/javascript">
+
+    function validation()
+    {
+        if (document.Form.Name.value=="")
+        {
+            alert("please provide your name");
+            return false;
+        }
+
+         if (document.Form.EId.value=="")
+        {
+            alert("please provide your email ID");
+            return false;
+        }
+
+        if (document.Form.PNo.value=="")
+        {
+            alert("please provide your phone no");
+            return false;
+        }
+
+
+        if (document.Form.EId.value=="")
+        {
+            alert("please provide your email ID");
+            return false;
+        }
+var pno=document.Form.PNo.value;
+       
+
+         if(pno.length!=10)
+         {
+            alert("provide proper no please");
+             return false;
+         }
+
+        // var phoneCheck=new RegExp("^([0-9]{10})$");
+        // var phoneResult=phoneCheck.test(pno);
+        // if(result==false)
+        // {   alert("proper phone no");
+        //     return false;}
+
+
+
+var email=document.Form.EId.value;  
+  atpos = email.indexOf("@");
+  dotpos = email.lastIndexOf(".");
+         
+        if (atpos < 1 || ( dotpos - atpos < 2 ))
+         { 
+          alert("Please enter a valid e-mail address ");  
+            return false;  
+         }  
+//  var check=new RegExp( "^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,4})$ ");
+
+//  var result=check.test(email);
+//  if(result==false)
+//  {  alert("proper email address");
+//      return false;}
+
+
+
+
+
+console.log(document.Form.Name.value);
+console.log(document.Form.EId.value);
+console.log(document.Form.PNo.value);
+
+alert("successfully registered");
+
+
+    }
+
+</script>
+
+
+
+
+
+
+    <style>
+    table {
+        margin-left: 35%;
+        margin-top: 10%;
+        table-layout: auto;
+    /* border: 3px solid black; */
+    width: 25%;
+    height: 50px;
+    background-color: lightseagreen;
+    
+    
+    
+    
+
+    
+    
+}
+
+td {
+    height: 40px;
+    vertical-align: left;
+}
+#tt{
+    margin-left: 45%;
+    margin-top: 1%;
+}
+
+th, td {
+    padding: 10px;
+    /* text-align: left; */
+}
+
+
+</style>
+</head>
+<body>
+        <div style="overflow-x:auto;">
+                <form action="contacts.html" name="Form" onsubmit="return(validation());">
+                <table >
+                    
+       <caption align="right">SIGN UP</caption>
+   <tr><td align="center">name</td>
+    
+<td align="center"><input type="text" name="Name"></td></tr> 
+<tr>
+    <td align="center" >email id</td>
+    <td align="center"><input type="text" name="EId"></td>
+</tr>
+<tr>
+    <td align="center">Phone number</td>
+    <td align="center"><input type="number" name="PNo"></td>
+</tr>
+
+<tr>
+   <td> </td>
+   <td colspan="2"><input type="submit" value="Submit"></td>
+    
+</tr>
+</table>
+</form>
+</div>
+
+</body>
+</html>

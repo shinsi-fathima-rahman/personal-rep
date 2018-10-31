@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+
+
+
+$(document).ready(function () {
+$.ajax({
+    
+    url:"http://jsonplaceholder.typicode.com/posts",
+    dataType:"Text",
+    success:function(data){
+
+        console.log(data);
+        function getTypeofHTML(tag){
+    function DecideHTML(data){
+      console.log(`<${tag}>${data}<${tag}>`)
+    }
+    return DecideHTML
+  }
+
+   let h1 = getTypeofHTML('h1')
+  console.log(h1(data));
+  console.log("hello");
+    }
+
+
+})
+});
+
+
+
+</script>
+</head>
+<body>
+    Hi
+    
+    </body>
+    </html>

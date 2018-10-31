@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <script>
+
+
+function getTypeofHTML(tag){
+    function DecideHTML(data){
+      console.log(`<${tag}>${data}<${tag}>`)
+     
+    }
+    return DecideHTML
+  }
+
+window.onload = function() {
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            var data = JSON.parse(xhr.responseText);
+            data.forEach(function (item) {
+                pios(item);
+            });
+        }
+    }
+    xhr.open('GET', 'http://jsonplaceholder.typicode.com/posts', true);
+    xhr.send();
+};
+
+function pios(item) {
+    var p = document.createElement('p');
+    p.id = item.id;
+    p.innerHTML =item.id+'<br>'+ item.title + '<br>' + item.body
+    document.getElementById('locations').appendChild(p)
+}
+
+
+  let h1 = getTypeofHTML('h1')
+  console.log(h1('i am the data'))
+  console.log("hello");
+  
+
+  </script>
+</head>
+<body>
+  <h1>blaah</h1>
+  <div id="locations"></div>
+</body>
+</html>
+
+
+

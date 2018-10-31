@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h2>JavaScript Array Operations</h2>
+
+    <p id="demo"></p>
+    <p id="place"></p>
+    <p id="here"></p>
+
+    <script>
+        var arr = ["8", "5", "1", "4", "3", "5", "3"];
+        var tem = [];
+        var temp;
+
+        for (i = 0; i < arr.length; i++)
+
+
+
+            for (j = 1; j < arr.length; j++) {
+                if (arr[j] < arr[j + 1]) {
+                    temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+
+
+                }
+            }
+
+        var sum = +arr[0] + +arr[1];
+
+
+        var j = 0;
+        for (var i = 0; i < arr.length; i++)
+
+
+            if (arr[i] != arr[i + 1])
+                tem[j++] = arr[i];
+
+
+        tem[j++] = arr[arr.length];
+
+
+
+
+
+        document.getElementById("demo").innerHTML = arr;
+        document.getElementById("place").innerHTML = sum;
+        document.getElementById("here").innerHTML = tem;
+
+    </script>
+
+</body>
+
+</html>

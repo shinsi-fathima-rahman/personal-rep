@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Car Anim</title>
+</head>
+
+<style>
+
+.car{
+
+ height:200px;
+    margin-left:auto;
+    margin-right:auto;
+    top:25px;
+    position:relative; /* and this has to be relative */
+    width:400px;
+    animation-duration: 5s;
+     animation-iteration-count: 20;
+    animation-timing-function: linear;
+    
+    
+    
+    animation-name:moving;
+ 
+}
+
+@keyframes movingCar{
+    from{
+        margin-left:100%;
+       
+    }
+    to{
+        margin-left:0%;
+       
+    }
+}
+
+
+
+
+.tyre1
+{   
+    height:95px;
+    left:30px; 
+    position:absolute;
+    top:125px; 
+    width:95px;
+    animation-name:rotate;
+    animation-duration: 5s;
+    animation-iteration-count: 20;
+    animation-timing-function: linear;
+
+}
+.tyre2
+{    height:95px;
+    left:300px; 
+    position:absolute;
+    top:125px; 
+    width:95px;
+     animation-duration: 5s;
+     animation-iteration-count: 20;
+    animation-timing-function: linear;
+    
+    
+    
+    animation-name:rotate;
+} 
+@keyframes rotate{
+    from{
+        transform: rotate(0deg)
+    }
+to{
+    transform:rotate(360deg)
+}
+
+from{
+        margin-left:0%;
+       
+    }
+    to{
+        margin-left:100%;
+       
+    }
+
+
+}
+
+@keyframes moving
+{
+    from{
+        margin-left:0%;
+       
+    }
+    to{
+        margin-left:100%;
+       
+    }
+}
+
+.cloud
+{
+    height:100px;
+    left:0px; 
+    position:absolute;
+    top:5px; 
+    width:200px;
+    display: block;
+      animation-duration: 5s; 
+    animation-iteration-count: 20;
+    animation-timing-function: linear;
+
+    
+    
+    animation-name: movingCar; 
+}
+
+.street
+{
+    width:100%;
+    position :relative;
+    top:10%;
+    height:200px;
+    background-color: black;
+}
+
+
+</style>
+<script>
+
+var cloud;//Cloud Image
+var w;//innerWidth of Browser
+var sp = 50;//starting position of cloud
+function Load() {
+    w = window.innerWidth;
+    cloud = document.getElementById("cloud");
+    setInterval(moveCloud,100);
+}
+//call Move Cloud
+function moveCloud(){
+    cloud.style.left = sp+"px";
+    sp-=10;
+    if(sp<=0) sp = w-10;
+}
+
+
+</script>
+
+<body>
+ 
+
+
+<body onload="Load();">
+                 
+             <img src="https://image.ibb.co/hqGnkk/cloud.png" alt="cloud" class="cloud"> 
+                <div class=movingCar>
+                        
+                <img src="https://preview.ibb.co/dy1bd5/car.png" height="200" width="400"alt="car" class="car">
+                <img src="https://image.ibb.co/cBwWBQ/tyre.png"height=100 alt="tyre" class="tyre1">
+                <img src="https://image.ibb.co/cBwWBQ/tyre.png" height=100 alt="tyre" class="tyre2">
+                </div>
+                <div class="street"></div>
+</body>
+</html>
+   

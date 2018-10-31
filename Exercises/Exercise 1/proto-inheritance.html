@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+
+</head>
+<body>
+  <h1>Hello</h1>
+  <div id="myLocation"></div>
+<br/>
+ <div id="loc"></div>
+ <br/>
+ <div id="loc2"></div>
+ 
+
+
+ <script>
+
+        let bttOrig = {
+          exists:true,
+          
+          created() {
+            
+            
+         
+              
+          
+                this.htmlText='<button type=button ';
+                this.text2='>Click me</button>';
+            //button without formatting
+          
+          document.getElementById('myLocation').innerHTML=this.htmlText+this.text2;
+        
+           
+            
+          }
+        };
+        
+        let bttn1 = {
+            
+          create2() {
+            //button should be green
+            var obj1=Object.create(bttOrig);
+            var cssText1='style="background-color:green"';
+            
+           
+          
+            document.getElementById('loc').innerHTML=obj1.htmlText+cssText1+obj1.text2;
+            
+
+          }
+            
+          
+          
+        }
+
+        let bttn2={
+          //button should be red,no border,text color should be white
+          create3(){
+           var obj2=Object.create(bttOrig);
+           
+            var cssText2='style="background-color:red;border:none;color:white"';
+            document.getElementById('loc2').innerHTML=obj2.htmlText+cssText2+obj2.text2;
+          }
+        }
+
+        
+        
+        
+      bttOrig.created();
+      bttn1.create2();
+      bttn2.create3();
+        
+        
+         </script>
+
+
+
+
+</body>
+</html>
