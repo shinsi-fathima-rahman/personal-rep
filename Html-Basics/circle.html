@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+.circle
+{
+    background:linear-gradient(rgb(206, 23, 54),black);
+    width:500px;
+    height:500px;
+    border-radius:50%;
+    /* animation:5s infinite slidein; */
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-name: slidein;
+    animation-direction: alternate;
+
+}
+
+@keyframes slidein{
+    from{
+        margin-left:100%;
+        width:0px;
+        height:0px;
+    }
+    to{
+        margin-left:0%;
+        width:500px;
+        height:500px;
+    }
+}
+
+/* .circle1
+{
+    margin-left: 50%;
+    margin-bottom: 100%;
+    background:radial-gradient(pink,black);
+    width:100px;
+    height:100px;
+    border-radius:50%;
+
+} */
+</style>
+
+<body>
+        <div class=circle></div>
+        <!-- <div class=circle1></div> -->
+</body>
+</html>
